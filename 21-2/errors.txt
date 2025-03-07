@@ -1,0 +1,25 @@
+heap.cpp: In member function ‘std::pair<int*, int> intMinHeap::heapsort()’:
+heap.cpp:25:1: warning: no return statement in function returning non-void [-Wreturn-type]
+   25 | }
+      | ^
+heap.cpp: In member function ‘bool intMinHeap::heapinsert(int)’:
+heap.cpp:46:1: warning: no return statement in function returning non-void [-Wreturn-type]
+   46 | }
+      | ^
+heap.cpp: In member function ‘int intMinHeap::minimum()’:
+heap.cpp:49:27: warning: no return statement in function returning non-void [-Wreturn-type]
+   49 | int intMinHeap::minimum(){}
+      |                           ^
+heap.cpp: In member function ‘int intMinHeap::minOf3(int, int, int)’:
+heap.cpp:96:39: warning: no return statement in function returning non-void [-Wreturn-type]
+   96 | int intMinHeap::minOf3(int, int, int){}
+      |                                       ^
+heap.cpp: In member function ‘int intMinHeap::parent(int)’:
+heap.cpp:110:14: error: ‘index’ was not declared in this scope
+  110 |     return ((index - 2) / 2);
+      |              ^~~~~
+heap.cpp: In member function ‘void intMinHeap::heapify(int)’:
+heap.cpp:122:14: error: ‘indexofmin’ was not declared in this scope
+  122 |     int n  = indexofmin(i, left(i), right(i));
+      |              ^~~~~~~~~~
+make: *** [Makefile:16: heap.o] Error 1
