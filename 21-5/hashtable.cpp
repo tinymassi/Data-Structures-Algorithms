@@ -4,6 +4,8 @@
 // massimoginella12@gmail.com                                //
 // ********************************************************* //
 
+// FIXED COMPILE-TIME WARNINGS
+
 #include <iostream>
 #include <vector>
 #include <string>
@@ -20,7 +22,7 @@ hashTable::hashTable(int table_size) : m(table_size) {
 }
 
 
-// recieves some data and inserts it into the hash table
+// receives some data and inserts it into the hash table
 void hashTable::insert(int key, std::string data){
     if (key < 0) {
         return;
@@ -33,10 +35,10 @@ void hashTable::insert(int key, std::string data){
 // clears the entire hash table 
 void hashTable::clear() {
     int bucket_size = 0;
-    for (size_t i = 0; i < m; i++) {
+    for (int i = 0; i < m; i++) {
         if (table[i].size() > 0) {
             bucket_size = table[i].size();
-            for (size_t k = 0; k < bucket_size; k++) {
+            for (int k = 0; k < bucket_size; k++) {
                 table[i].pop_back();
             }
         }
@@ -44,7 +46,7 @@ void hashTable::clear() {
 }
 
 
-// recieves a key and deletes the associated data attached
+// receives a key and deletes the associated data attached
 // to that key in the hash table
 void hashTable::delete_(int key){
     if (key < 0) {
@@ -86,7 +88,7 @@ std::vector<std::string> hashTable::all_entries() {
     std::string zero_pad = "";
     std::vector<std::string> table_contents;
 
-    for (size_t i = 0; i < m; i++) {
+    for (int i = 0; i < m; i++) {
         if (table[i].size() > 0) {
             for (size_t k = 0; k < table[i].size(); k++) {
                 key_str = std::to_string(table[i][k].first);
@@ -130,4 +132,10 @@ int hashTable::find(int index, int key){
 // the hash table.
 int hashTable::hash(int key){
     return floor(m * (key * c - floor(key * c)));
+}
+
+
+
+hashTable::~hashTable() {
+    delete[] table;
 }

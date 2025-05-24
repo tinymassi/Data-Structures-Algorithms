@@ -53,8 +53,7 @@ void radix_bucket_sort(std::vector<int>& A, int n, int d, int k) {
 
 // function that grabs the ith digit of an integer 'num'
 int ith_digit(int num, int i) {
-    int digit = 0;
-    return digit = (num/static_cast<int>(pow(10, i))) % 10;
+    return (num/static_cast<int>(pow(10, i))) % 10;
 }
 
 

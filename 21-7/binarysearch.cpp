@@ -2,7 +2,7 @@
     This program is the function implementation of the BinarySearch class
     locted in binarysearch.h. This code is responsible for generating a binary
     search tree and supports a variety of functions that allow the user to 
-    maniuplate said tree through inserting nodes, traversal, deletion, and 
+    manipulate said tree through inserting nodes, traversal, deletion, and 
     more.
                                                
     author: massimoginella12@gmail.com                                         

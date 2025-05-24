@@ -51,8 +51,8 @@ int main() {
         if (instruction == "1") {
             std::cout << "read hash table - filename? ";
             std::getline(std::cin, file_name);
-            std::ifstream file(file_name + ".txt");
-            while(std::getline(file, line)) {
+            std::ifstream file(file_name);          // FIXED BY REMOVING '.txt' FROM THE IFSTREAM
+            while(std::getline(file, line)) {       // FIXED FILES READING IMPROPERLY
                 values = split_input(line);
                 table.insert(values.first, values.second);
             }
@@ -88,8 +88,8 @@ int main() {
 
         } else if (instruction == "6") {
             std::cout << "write hash table - filename? ";
-            std::getline(std::cin, file_name);
-            std::ofstream file(file_name + ".txt");
+            std::getline(std::cin, file_name);  
+            std::ofstream file(file_name);              // FIXED THE '.txt' HERE TOO.
             table_copy = table.all_entries();
             for (size_t i = 0; i < table_copy.size(); i++) {
                 file << table_copy[i] << std::endl;

@@ -19,6 +19,7 @@ public:
   void delete_(int key);
   std::string search(int key);
   std::vector<std::string> all_entries();
+  ~hashTable();
 private:
   int find(int index, int key); // helper search fn
   int hash(int key); // hash value for record

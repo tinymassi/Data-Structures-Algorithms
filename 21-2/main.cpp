@@ -28,22 +28,18 @@ int main() {
             }
 
         } else if (line == "-2") {
-
-            if (myHeap.isEmpty()) {
-                std::cerr << "Heap is empty. Nothing to sort." << std::endl;
-            } else {
-                std::pair <int *, int> sorted_heap = myHeap.heapsort();
-                std::cout << "sorted array: [";
-                for (int i = 0; i < (sorted_heap.second); i++) {
-                    if (i == sorted_heap.second - 1) {
-                        std::cout << sorted_heap.first[i];
-                    } else {
-                        std::cout << sorted_heap.first[i] << ", ";
-                    }
+            // FIXED BY REMOVING THE OUTPUT "HEAP IS EMPTY, NOTHING TO SORT IF HEAP SIZE IS 0"
+            std::pair <int *, int> sorted_heap = myHeap.heapsort();
+            std::cout << "sorted array: [";
+            for (int i = 0; i < (sorted_heap.second); i++) {
+                if (i == sorted_heap.second - 1) {
+                    std::cout << sorted_heap.first[i];
+                } else {
+                    std::cout << sorted_heap.first[i] << ", ";
                 }
-                std::cout << "]" << std::endl;      
-                delete[] sorted_heap.first; 
             }
+            std::cout << "]" << std::endl;      
+            delete[] sorted_heap.first; 
 
         } else if (line != " " && !line.empty()){
             

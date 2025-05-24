@@ -33,9 +33,6 @@ class pathfinder {
         std::vector<int> v_nudges;
         int maze_width;
         int maze_height;
-
-
 };
-
 
 #endif

@@ -9,11 +9,11 @@
 #include <iostream>
 #include <vector>
 #include <cstdlib>
-#include "maze.h"
 #include "disjoint.h"
+#include "maze.h"
+// FIXED ORDER OF .H INCLUDES
 
-
-// Constructor for MazeGenerator that recieves 'n' for an 'n x n' maze
+// Constructor for MazeGenerator that receives 'n' for an 'n x n' maze
 // and creates the maze itself filled with values 11 for the opening, 14 
 // for the exit, and 15 for all other cells.
 MazeGenerator::MazeGenerator (int n) : maze_dim(n) {
@@ -51,7 +51,7 @@ std::vector<int> MazeGenerator::shuffle(std::vector<int> maze_indexes) {
 
 
 
-// Generates a maze using the disjoint set class by seletcting a random cell,
+// Generates a maze using the disjoint set class by selecting a random cell,
 // grabbing a random neighbor of that cell, checking if the neighbor and cell
 // are part of the same set (if not, they are unioned and the wall between them
 // is knocked down), then continues to do so until there is only one set (all 
@@ -93,6 +93,7 @@ void MazeGenerator::print_maze () {
         }
         std::cout <<  lookup[maze[i]];
     }
+    std::cout << std::endl;         // NO ENDLINE FIXED!
 }
 
 

@@ -56,7 +56,7 @@ void pathfinder::find_path(std::vector<std::vector<int>> maze) {
         for (int i = 0; i < 4; i++) {                                  // for checking a max of 4 neighbors/cell
             neighbor = get_neighbor(cell, i);                          // returns the cells neighbor based on value of i
 
-            if (is_neighbor_valid(neighbor) && !visited[neighbor]) {   // check if neighbor coord is out of bounds or if
+            if (is_neighbor_valid(neighbor) && !visited[neighbor]) {   // check if neighbor coord is out of bounds and if
                                                                        // the neighbor has already been visited
                 if (check_wall(maze[cell.second][cell.first], i)) {    // check if there is a wall separating cell & neighbor
                     parent[neighbor] = cell;

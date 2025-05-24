@@ -50,9 +50,8 @@ std::pair <int *, int> intMinHeap::heapsort(){
 
     size = original_size; 
     A = A_original;
-    A_original = nullptr;
-    delete A_original;
-    
+    // FIXED UNECESSARY DELETION OF A_ORIGINAL POINTER
+
     return std::pair<int *, int> (A_sorted, size);
 }
 

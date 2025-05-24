@@ -39,7 +39,7 @@ class intMinHeap {
         void buildheap();                       // convert array to a heap
         void heapify(int i);                    // heapify at position i
         void swap(int i, int n);                // swaps values at indexes i and n
-        int *A;             // array of integers - data
+        int *A;                                 // array of integers - data
         int capacity;                           // max size of array A
         int size;                               // data size in array
 

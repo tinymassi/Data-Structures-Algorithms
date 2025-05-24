@@ -15,7 +15,7 @@
 #include <cstdlib>
 #include <ctime>
 #include "maze.h"
-#include "disjoint.h"
+// FIXED INCLUDE THAT WASNT NECESSARY.
 
 
 int main(int argc, char* argv[]) {

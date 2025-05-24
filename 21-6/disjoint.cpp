@@ -26,8 +26,9 @@ DisjointSet::DisjointSet(int n) : num_nodes(n){
 }
 
 
+// BOUNDS CHECK FIXED
 void DisjointSet::Union(int x, int y){
-    if (x < 0 || x >= num_nodes) {
+    if (x < 0 || x >= num_nodes || y < 0 || y >= num_nodes) {
         std::cerr << "Node " << x << " cannot exceed or fall short of set size " << (num_nodes - 1) << std::endl;
         return;
     }
@@ -85,7 +86,8 @@ int DisjointSet::num_sets() {
 }
 
 
+// FIXED INVALID DELETE SYNTAX!
 DisjointSet::~DisjointSet() {
-    delete rank;
-    delete parent;
+    delete[] rank;
+    delete[] parent;
 }

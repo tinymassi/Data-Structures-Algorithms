@@ -13,6 +13,7 @@
 #include <string>
 #include <utility>
 #include <algorithm>
+#include <iomanip>
 
 
 void quicksort(std::vector<int>& A, int p, int r);
@@ -99,30 +100,22 @@ void sort_it (std::vector<int>& A, int p, int r) {
 }
 
 
+// FIXED THE INPUT TO BE ONLY INTEGERS AND ONLY OUTPUT INTEGERS WITH IOMANIP METHODS
 int main() {
     
     std::vector<int> inputs = {};
-    std::string line = "";    
+    int num;    
 
-    while (std::getline(std::cin, line)) {
-        inputs.push_back(std::stoi(line));
+    while (std::cin >> num) {
+        inputs.push_back(num);
     }
 
     sort_it(inputs, 0, inputs.size() - 1);
     
-    std::vector<std::string> sorted_inputs = {};
+    std::vector<int> sorted_inputs = {};
     
     for (size_t i = 0; i < inputs.size(); i++) {
-        sorted_inputs.push_back(std::to_string(inputs[i]));
-    }
-  
-    std::string str = "";
-    for (size_t i = 0; i < sorted_inputs.size(); i++) {
-        str = sorted_inputs[i];
-        for (size_t j = 0; j < (9 - str.length()); j++) {
-            sorted_inputs[i] = "0" + sorted_inputs[i];
-        }
-        std::cout << sorted_inputs[i] << std::endl;
+        std::cout << std::setfill('0') << std::setw(9) << inputs[i] << std::endl;
     }
 
     return 0;
